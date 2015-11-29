@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <TestTask_Logger>
+            <active>true</active>
+            <codePool>local</codePool>
+        </TestTask_Logger>
+    </modules>
+</config>
