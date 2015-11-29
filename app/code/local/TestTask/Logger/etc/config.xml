@@ -1,0 +1,21 @@
+<config>
+    <global>
+        <models>
+            <logger>
+                <class>TestTask_Logger_Model</class>
+            </logger>
+        </models>
+
+        <events>
+            <customer_login>
+                <observers>
+                    <logger>
+                        <type>model</type>
+                        <class>logger/observer</class>
+                        <method>logCustomer</method>
+                    </logger>
+                </observers>
+            </customer_login>
+        </events>
+    </global>
+</config>
