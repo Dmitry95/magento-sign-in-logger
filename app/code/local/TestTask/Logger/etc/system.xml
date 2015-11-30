@@ -1,0 +1,43 @@
+<config>
+    <tabs>
+        <testTask translate="label" module="logger">
+            <label>Test task</label>
+            <sort_order>100</sort_order>
+        </testTask>
+    </tabs>
+    <sections>
+        <logger translate="label" module="logger">
+            <label>Custom Logger</label>
+            <tab>testTask</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <groups>
+                <logger_group translate="label">
+                    <label>General Logger Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <active translate="label">
+                            <label>Is enabled:</label>
+                            <comment>Would you like to log a general user information on each login into customer.log file?</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>40</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+                    </fields>
+
+                </logger_group>
+            </groups>
+        </logger>
+    </sections>
+</config>

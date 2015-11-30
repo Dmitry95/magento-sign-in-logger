@@ -1,10 +1,20 @@
 <config>
+    <modules>
+        <TestTask_Logger>
+            <version>0.0.1</version>
+        </TestTask_Logger>
+    </modules>
     <global>
         <models>
             <logger>
                 <class>TestTask_Logger_Model</class>
             </logger>
         </models>
+        <helpers>
+            <logger>
+                <class>TestTask_Logger_Helper</class>
+            </logger>
+        </helpers>
 
         <events>
             <customer_login>
@@ -18,4 +28,29 @@
             </customer_login>
         </events>
     </global>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <logger>
+                                            <title>Logger - All</title>
+                                        </logger>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
 </config>
