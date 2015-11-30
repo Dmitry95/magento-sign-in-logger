@@ -1,0 +1,7 @@
+<layout>
+    <logger_index_index>
+        <reference name="content">
+            <block type="logger/logHistory" name="logHistoryInfo" template="logger/logHistory.phtml"></block>
+        </reference>
+    </logger_index_index>
+</layout>

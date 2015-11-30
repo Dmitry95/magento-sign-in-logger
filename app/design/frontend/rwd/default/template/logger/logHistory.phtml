@@ -1,0 +1,20 @@
+<?php $logsArray = $this->getLogHistory(); ?>
+
+<h2 class="log-history-title">Here is content of <i>customer.log</i> file</h2>
+
+<table class="log-history-table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Date/Time</th>
+    </tr>
+    <?php foreach($logsArray as $log): ?>
+    <tr>
+        <td><?php echo $log['userId']; ?></td>
+        <td><?php echo $log['userName']; ?></td>
+        <td><?php echo $log['userEmail']; ?></td>
+        <td><?php echo $log['logTime']; ?></td>
+    </tr>
+    <?php endforeach; ?>
+</table>

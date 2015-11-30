@@ -15,6 +15,11 @@
                 <class>TestTask_Logger_Helper</class>
             </logger>
         </helpers>
+        <blocks>
+            <logger>
+                <class>TestTask_Logger_Block</class>
+            </logger>
+        </blocks>
 
         <events>
             <customer_login>
@@ -28,6 +33,26 @@
             </customer_login>
         </events>
     </global>
+
+    <frontend>
+        <routers>
+            <logger>
+                <use>standard</use>
+                <args>
+                    <module>TestTask_Logger</module>
+                    <frontName>logger</frontName>
+                </args>
+            </logger>
+        </routers>
+
+        <layout>
+            <updates>
+                <logger>
+                    <file>logger.xml</file>
+                </logger>
+            </updates>
+        </layout>
+    </frontend>
 
     <adminhtml>
         <acl>
