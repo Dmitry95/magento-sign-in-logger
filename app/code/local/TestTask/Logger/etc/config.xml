@@ -1,10 +1,25 @@
 <config>
+    <modules>
+        <TestTask_Logger>
+            <version>0.0.1</version>
+        </TestTask_Logger>
+    </modules>
     <global>
         <models>
             <logger>
                 <class>TestTask_Logger_Model</class>
             </logger>
         </models>
+        <helpers>
+            <logger>
+                <class>TestTask_Logger_Helper</class>
+            </logger>
+        </helpers>
+        <blocks>
+            <logger>
+                <class>TestTask_Logger_Block</class>
+            </logger>
+        </blocks>
 
         <events>
             <customer_login>
@@ -18,4 +33,49 @@
             </customer_login>
         </events>
     </global>
+
+    <frontend>
+        <routers>
+            <logger>
+                <use>standard</use>
+                <args>
+                    <module>TestTask_Logger</module>
+                    <frontName>logger</frontName>
+                </args>
+            </logger>
+        </routers>
+
+        <layout>
+            <updates>
+                <logger>
+                    <file>logger.xml</file>
+                </logger>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <logger>
+                                            <title>Logger - All</title>
+                                        </logger>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
 </config>
