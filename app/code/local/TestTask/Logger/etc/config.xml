@@ -8,8 +8,26 @@
         <models>
             <logger>
                 <class>TestTask_Logger_Model</class>
+                <resourceModel>testtask_logger_resource</resourceModel>
             </logger>
+            <testtask_logger_resource>
+                <class>TestTask_Logger_Model_Resource</class>
+                <entities>
+                    <login_history>
+                        <table>logger_history</table>
+                    </login_history>
+                </entities>
+            </testtask_logger_resource>
         </models>
+        <resources>
+            <logger_setup>
+                <setup>
+                    <module>TestTask_Logger</module>
+                    <class>TestTask_Logger_Model_Resource_Setup</class>
+                </setup>
+            </logger_setup>
+        </resources>
+
         <helpers>
             <logger>
                 <class>TestTask_Logger_Helper</class>
@@ -54,7 +72,26 @@
         </layout>
     </frontend>
 
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <TetsTask_Logger before="Mage_Adminhtml">TestTask_Logger_Adminhtml</TetsTask_Logger>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
     <adminhtml>
+        <layout>
+            <updates>
+                <logger>
+                    <file>logger.xml</file>
+                </logger>
+            </updates>
+        </layout>
         <acl>
             <resources>
                 <all>

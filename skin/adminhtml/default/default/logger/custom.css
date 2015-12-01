@@ -1,0 +1,22 @@
+/* ===== logger ====== */
+
+.log-history-title {
+    text-align: center;
+}
+
+.log-history-table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.log-history-table td, th {
+    padding: 6px 20px;
+    border: 1px solid #F5700F;
+}
+
+.log-history-table th {
+    background: #F5700F;
+    color: #fff;
+}
+
+/* =================== */
