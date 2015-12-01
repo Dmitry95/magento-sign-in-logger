@@ -11,6 +11,6 @@ class TestTask_Logger_Model_LoginHistory
 {
     protected function _construct()
     {
-        $this->_init('logger/login_history');
+        $this->_init('logger/loginHistory');
     }
 }
