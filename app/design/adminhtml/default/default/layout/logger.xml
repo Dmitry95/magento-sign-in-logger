@@ -1,0 +1,14 @@
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addCss">
+                <name>logger/custom.css</name>
+            </action>
+        </reference>
+    </default>
+    <adminhtml_logger_index>
+        <reference name="content">
+            <block type="logger/adminhtml_logHistory" name="logHistoryInfoInAdmin" template="logger/logHistory.phtml"></block>
+        </reference>
+    </adminhtml_logger_index>
+</layout>

@@ -1,0 +1,13 @@
+<config>
+    <menu>
+        <customer>
+            <children>
+                <testTask_logger_logger translate="title" module="logger">
+                    <sort_order>40</sort_order>
+                    <title>Customers Logger (TestTask)</title>
+                    <action>adminhtml/logger/</action>
+                </testTask_logger_logger>
+            </children>
+        </customer>
+    </menu>
+</config>

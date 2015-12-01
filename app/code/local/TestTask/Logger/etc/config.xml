@@ -72,7 +72,26 @@
         </layout>
     </frontend>
 
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <TetsTask_Logger before="Mage_Adminhtml">TestTask_Logger_Adminhtml</TetsTask_Logger>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
     <adminhtml>
+        <layout>
+            <updates>
+                <logger>
+                    <file>logger.xml</file>
+                </logger>
+            </updates>
+        </layout>
         <acl>
             <resources>
                 <all>

@@ -1,0 +1,29 @@
+<?php
+$logs = $this->getLogHistory();
+$customersModel = $this->getCustomers();
+?>
+
+<h2 class="log-history-title">Here is the history of user login which contains in <i>database</i>.</h2>
+
+<table class="log-history-table">
+    <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Date/Time</th>
+        <th>Manage Customers</th>
+    </tr>
+    <?php foreach($logs as $log): ?>
+        <?php $customerId = $log->getEntityId(); ?>
+        <?php $customer = $customersModel->load($customerId); ?>
+    <tr>
+        <td><?php echo $log->getLogId(); ?></td>
+        <td><?php echo $customerId; ?></td>
+        <td><?php echo $customer->getName(); ?></td>
+        <td><?php echo $customer->getEmail(); ?></td>
+        <td><?php echo $log->getColumnName(); ?></td>
+        <td><a href="<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/customer/edit",array("id"=>$customerId)) ?>">Manage Customer</a></td>
+    </tr>
+    <?php endforeach; ?>
+</table>
